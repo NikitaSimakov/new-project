@@ -1,0 +1,19 @@
+{
+  "name": "new-project",
+  "version": "1.0.0",
+  "description": "test bundling and use fetching and pagination",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikitaSimakov/new-project.git"
+  },
+  "author": "Nikita Simakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikitaSimakov/new-project/issues"
+  },
+  "homepage": "https://github.com/NikitaSimakov/new-project#readme"
+}
