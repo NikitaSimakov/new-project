@@ -1,5 +1,3 @@
-import { Notify } from "notiflix/build/notiflix-notify-aio";
-
 const container = document.querySelector(".js-container");
 
 container.addEventListener("click", onClick);
