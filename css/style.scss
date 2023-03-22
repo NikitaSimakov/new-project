@@ -1,0 +1,32 @@
+body .cat_page {
+    background-image: url('https://t3.ftcdn.net/jpg/01/06/80/08/360_F_106800853_kBZQ9XKTrCcEpzFnXChnEymJWnRUjFoK.jpg');
+    background-repeat: repeat;
+    background-position: right 30px bottom 20px;
+}
+body .beer_page {
+    background-color:bisque;
+
+}
+// .js-container img {
+//     width: 80%;
+//     display: flex;
+
+//     margin-left: auto;
+//     margin-right: auto;
+//     align-items: center;
+// }
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.beer_img {
+    width: 10%;
+}
+
+.beer_link {
+    display: flex;
+    justify-content: end;
+    text-decoration: none;
+}

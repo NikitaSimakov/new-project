@@ -1,0 +1,26 @@
+body .cat_page {
+  background-image: url("https://t3.ftcdn.net/jpg/01/06/80/08/360_F_106800853_kBZQ9XKTrCcEpzFnXChnEymJWnRUjFoK.jpg");
+  background-repeat: repeat;
+  background-position: right 30px bottom 20px;
+}
+
+body .beer_page {
+  background-color: bisque;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.beer_img {
+  width: 10%;
+}
+
+.beer_link {
+  display: flex;
+  justify-content: end;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=/style.6b54f5b7.css.map */

@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/NikitaSimakov/new-project/issues"
   },
-  "homepage": "https://github.com/NikitaSimakov/new-project#readme"
+  "homepage": "https://github.com/NikitaSimakov/new-project#readme",
+  "devDependencies": {
+    "sass": "^1.59.3"
+  },
+  "dependencies": {
+    "notiflix": "^3.2.6"
+  }
 }

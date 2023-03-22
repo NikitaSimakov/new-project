@@ -1,3 +1,5 @@
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+
 const container = document.querySelector(".js-container");
 
 container.addEventListener("click", onClick);
@@ -12,7 +14,7 @@ function onClick(event) {
 }
 
 function fetchCat() {
-  return fetch("https://cataas.com/cat?json=true")
+  return fetch("https://aws.random.cat/meow")
     .then((resp) => {
       if (!resp.ok) {
         throw new Error();
@@ -20,7 +22,7 @@ function fetchCat() {
       return resp.json();
     })
     .catch((error) => {
-      console.log(error);
+      Notify.failure(error);
       return error;
     });
 }
@@ -33,6 +35,6 @@ function fetchingCat() {
 }
 
 function createMarkup(data) {
-  const markup = `<img src='https://cataas.com/cat/${data._id}'></img>`;
+  const markup = `<img src='${data.file}'></img>`;
   container.insertAdjacentHTML("beforeend", markup);
 }
