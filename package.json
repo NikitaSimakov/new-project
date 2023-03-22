@@ -4,6 +4,7 @@
   "description": "test bundling and use fetching and pagination",
   "main": "index.js",
   "scripts": {
+    "start": "parcel *.html",
     "test": "test"
   },
   "repository": {
@@ -17,7 +18,8 @@
   },
   "homepage": "https://github.com/NikitaSimakov/new-project#readme",
   "devDependencies": {
-    "sass": "^1.59.3"
+    "sass": "^1.59.3",
+    "@parcel/transformer-sass": "^2.6.0"
   },
   "dependencies": {
     "notiflix": "^3.2.6"
