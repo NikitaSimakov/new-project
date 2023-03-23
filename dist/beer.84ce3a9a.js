@@ -122,14 +122,13 @@ var container = document.querySelector(".js-beer_container");
 var BASE_URL = "https://api.punkapi.com/v2/beers";
 var button = document.querySelector(".moreBtn");
 var guard = document.querySelector(".js_guard");
-var observer = new IntersectionObserver(onLoad, options);
 var page = 1;
 var options = {
   root: null,
   rootMargin: "600px",
   threshold: 1.0
 };
-
+var observer = new IntersectionObserver(onLoad, options);
 // button.addEventListener("click", onClick);
 
 renderMarkup();
