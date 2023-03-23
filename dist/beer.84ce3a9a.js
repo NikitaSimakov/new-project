@@ -155,15 +155,9 @@ function onLoad(entries, observer) {
     }
   });
 }
-
-// function onClick() {
-//   page += 1;
-//   beerApi(page).then(createMarkup);
-// }
-
 function beerApi() {
   var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-  return fetch("".concat(BASE_URL, "?page=").concat(page, "&per_page=80")).then(function (resp) {
+  return fetch("".concat(BASE_URL, "?page=").concat(page, "&per_page=10")).then(function (resp) {
     if (!resp.ok) {
       throw new Error();
     }
@@ -178,6 +172,11 @@ function createMarkup(data) {
   });
   container.insertAdjacentHTML("beforeend", markup.join(" "));
 }
+
+// function onClick() {
+//   page += 1;
+//   beerApi(page).then(createMarkup);
+// }
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

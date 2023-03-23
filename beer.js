@@ -37,13 +37,8 @@ function onLoad(entries, observer) {
   });
 }
 
-// function onClick() {
-//   page += 1;
-//   beerApi(page).then(createMarkup);
-// }
-
 function beerApi(page = 1) {
-  return fetch(`${BASE_URL}?page=${page}&per_page=80`)
+  return fetch(`${BASE_URL}?page=${page}&per_page=10`)
     .then((resp) => {
       if (!resp.ok) {
         throw new Error();
@@ -75,3 +70,8 @@ function createMarkup(data) {
   );
   container.insertAdjacentHTML("beforeend", markup.join(" "));
 }
+
+// function onClick() {
+//   page += 1;
+//   beerApi(page).then(createMarkup);
+// }
