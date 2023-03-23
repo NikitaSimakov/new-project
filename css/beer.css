@@ -1,0 +1,60 @@
+/* .js-beer_container {
+    position: relative;
+    left: 50%;
+    
+} */
+
+/* .img_container img {
+    position: absolute;
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+} */
+.img_container {
+    display: flex;
+}
+.beer_img {
+    height: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px 30px 15px 30px;
+}
+
+.card_container {
+    max-width: 40%;
+
+    height: auto;
+    position: absolute;
+    margin-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+}   
+
+.item {
+    min-height: 760px;
+        display: block;
+        width: 100%;
+        float: left;
+        transition: width .2s;
+        width: 45%;
+	display: block;
+	border: 1px solid black;
+	border-radius: 3px;
+	/* position: relative; */
+	background: #fff;
+	margin: 0 20px 20px 0;
+	text-decoration: none;
+	color: #474747;
+	z-index: 0;
+	height: 300px;
+}
+
+.btn_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.js_guard {
+    width: 100%;
+}

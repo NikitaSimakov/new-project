@@ -118,10 +118,53 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"beer.js":[function(require,module,exports) {
-var container = document.querySelector(".js-container");
-console.log(container);
-function fetchBeer() {
-  return fetch("https://api.punkapi.com/v2/beers?page=2&per_page=20").then(function (resp) {
+var container = document.querySelector(".js-beer_container");
+var BASE_URL = "https://api.punkapi.com/v2/beers";
+var button = document.querySelector(".moreBtn");
+var guard = document.querySelector(".js_guard");
+var observer = new IntersectionObserver(onLoad, options);
+var page = 1;
+var options = {
+  root: null,
+  rootMargin: "600px",
+  threshold: 1.0
+};
+
+// button.addEventListener("click", onClick);
+
+renderMarkup();
+function renderMarkup() {
+  return beerApi().then(function (data) {
+    createMarkup(data);
+    observer.observe(guard);
+  }).catch(function (error) {
+    return console.log(error);
+  });
+}
+function onLoad(entries, observer) {
+  // console.log(entries);
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      page += 1;
+      beerApi(page).then(function (data) {
+        createMarkup(data);
+        if (data[data.length - 1].id === 325) {
+          console.log(data[data.length - 1].id);
+          observer.unobserve(guard);
+        }
+      });
+    }
+  });
+}
+
+// function onClick() {
+//   page += 1;
+//   beerApi(page).then(createMarkup);
+// }
+
+function beerApi() {
+  var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+  return fetch("".concat(BASE_URL, "?page=").concat(page, "&per_page=80")).then(function (resp) {
     if (!resp.ok) {
       throw new Error();
     }
@@ -130,10 +173,9 @@ function fetchBeer() {
     return console.log(error);
   });
 }
-fetchBeer().then(createMarkup);
 function createMarkup(data) {
   var markup = data.map(function (item) {
-    return "\n    <h1>".concat(item.name, "</h1>\n    <img class='beer_img' src='").concat(item.image_url, "'>\n    <p>").concat(item.description, "</p>\n    <span>IBU: ").concat(item.ibu, "</span>|<span>ABV: ").concat(item.abv, "</span>|<span>EBC: ").concat(item.ebc, "</span>\n    <h2>Brewers tips: ").concat(item.brewers_tips, "</h2>\n    <h2>Food pairing: ").concat(item.food_pairing.join(", "), "</h2>\n    ");
+    return "<li class='item'>\n      <div class='img_container'> \n      <img class='beer_img' src='".concat(item.image_url, "'>\n      </div>\n      <div class='card_container'>\n    <h1>").concat(item.name, "</h1>\n    \n    <p>").concat(item.description, "</p>\n    <span>IBU: ").concat(item.ibu, "</span>|<span>ABV: ").concat(item.abv, "</span>|<span>EBC: ").concat(item.ebc, "</span>\n    <h3>Brewers tips: ").concat(item.brewers_tips, "</h2>\n    <h3>Food pairing: ").concat(item.food_pairing.join(", "), "</h2>\n    <div>\n      </li>\n    ");
   });
   container.insertAdjacentHTML("beforeend", markup.join(" "));
 }
@@ -162,7 +204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52387" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50106" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
